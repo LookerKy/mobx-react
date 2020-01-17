@@ -5,14 +5,16 @@ import App from './App';
 import { Provider } from 'mobx-react';
 import * as serviceWorker from './serviceWorker';
 import CounterStore from './store/Counter';
+import MarketStore from './store/Market';
 
 const counter = new CounterStore();
+const market = new MarketStore();
 
 ReactDOM.render(
-  <Provider counter={counter}>
+  <Provider counter={counter} market={market}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
